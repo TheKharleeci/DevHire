@@ -1,0 +1,13 @@
+{
+    "development": {
+      "ENV": "DEVHIRE_POSTGRES_DEV_URL"
+    },
+    "test": {
+      "ENV": "DEVHIRE_POSTGRES_TEST_URL"
+    },
+    "defaultEnv": {
+      "ENV": "DEVHIRE_NODE_ENV"
+    },
+    "sql-file": true
+}
+  

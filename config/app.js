@@ -5,7 +5,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import expressFileUpload from 'express-fileupload';
 import { helpers, GenericErrors, constants } from '../app/utils';
-// import apiV1Routes from '../app/routes/v1';
+import apiV1Routes from '../app/routes/v1';
 import { redisDB } from '../app/db';
 
 const {  errorResponse, successResponse } = helpers;
@@ -24,7 +24,7 @@ const appConfig = (app) => {
   app.use(urlencoded({ extended: true }));
   app.use(expressFileUpload({ useTempFiles: true }));
   app.get('/', (_req, res) => successResponse(res, { message: WELCOME }));
-  // app.use(v1, apiV1Routes);
+  app.use(v1, apiV1Routes);
   app.use((_req, _res, next) => {
     next(notFoundApi);
   });
